@@ -17,7 +17,10 @@ body {
   /* opcional */
   line-height: 1.4em;
 }
-
+main {
+  position: relative;
+  min-height: 100vh;
+}
 /* Evitamos problemas con las imagenes */
 img,
 picture,
