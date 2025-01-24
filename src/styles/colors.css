@@ -1,6 +1,7 @@
 :root {
   /* Primary*/
   --Orange: hsl(26, 100%, 55%);
+  --Orange-alpha: hsla(26, 100%, 55%, 0.719);
   --Pale-orange: hsl(25, 100%, 94%);
 
   /* Neutral*/

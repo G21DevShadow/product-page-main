@@ -4,7 +4,7 @@ import { RELATIVE_PATHS } from "../../routes/relativePaths";
 export function Menu({ isActive, activate }) {
   return (
     <>
-      <div className="gradient"> </div>
+      <div className={`gradient ${isActive ? "gradient-active" : ""}`}> </div>
       <div className={`menu ${isActive ? "menu-active" : ""}`}>
         <ul className="menu_list">
           <li className="menu_item">

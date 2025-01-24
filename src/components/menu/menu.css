@@ -1,16 +1,15 @@
 @import url("../../styles/colors.css");
 
 .gradient {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   z-index: 20;
   width: 100%;
-  background-color: rgba(0 0 0 /0.6);
-  transition: display 0.4s ease-in-out;
-  overflow: hidden;
+  background-color: rgba(0 0 0 /0.5);
+  display: none;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .gradient-active {
@@ -50,4 +49,17 @@
 
 .menu_link {
   font-weight: 700;
+}
+
+@media (min-width: 610px) {
+  .menu_icon-close {
+    width: 25px;
+    height: 25px;
+  }
+  .menu_list {
+    gap: 1.5rem;
+  }
+  .menu_link {
+    font-size: 1.4rem;
+  }
 }

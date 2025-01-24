@@ -1,0 +1,89 @@
+@import url("../../styles/colors.css");
+
+.texts {
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.texts_tag {
+  font-size: 0.8rem;
+  color: var(--Dark-grayish-blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.texts_title {
+  max-width: 270px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--Very-dark-blue);
+  line-height: 29px;
+  margin-bottom: 1.6rem;
+}
+
+.texts_description {
+  width: 97%;
+  color: var(--Dark-grayish-blue);
+  line-height: 26px;
+  text-wrap: pretty;
+  margin-bottom: 1.9rem;
+}
+
+.texts_content-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.texts_price-discount {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.texts_price {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.texts_discount {
+  display: grid;
+  place-items: center;
+  width: 47px;
+  height: 25px;
+  font-size: 0.9rem;
+  color: var(--White);
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: var(--Very-dark-blue);
+}
+.texts_price-crossed {
+  color: var(--Dark-grayish-blue);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+@media (min-width: 1020px) {
+  .texts {
+    align-self: center;
+    height: max-content;
+    width: 100%;
+    max-width: 100%;
+  }
+  .texts_title {
+    max-width: 320px;
+    font-size: 2.2rem;
+    line-height: 38px;
+    margin-bottom: 1.5rem;
+  }
+  .texts_description {
+    width: 100%;
+    margin-bottom: 1.8rem;
+  }
+  .texts_content-price {
+    display: grid;
+    gap: 1rem;
+  }
+}

@@ -21,6 +21,27 @@ main {
   position: relative;
   min-height: 100vh;
 }
+.container {
+  display: grid;
+  grid-template-rows: 330px 1fr;
+  gap: 1.3rem;
+}
+@media (min-width: 610px) {
+  .container {
+    grid-template-rows: 460px 1fr;
+  }
+}
+@media (min-width: 1020px) {
+  .container {
+    height: calc(100vh - 99.19px);
+    grid-template-columns: minmax(310px, 350px) 470px;
+    grid-template-rows: max-content;
+    align-content: center;
+    justify-content: center;
+    gap: 4rem;
+  }
+}
+
 /* Evitamos problemas con las imagenes */
 img,
 picture,
