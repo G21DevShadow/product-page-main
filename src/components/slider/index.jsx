@@ -1,14 +1,19 @@
 import "./slider.css";
 
 import { LIST_OF_IMAGES_LARGE } from "../../utils/constants";
-import { LIST_OF_IMAGES_SMALL } from "../../utils/constants";
 import { RELATIVE_PATHS } from "../../routes/relativePaths";
-import { useCounter } from "../../Hooks/counter";
 
-export function Slider() {
+//importar componente
+import { ListImg } from "../list-images";
+
+export function Slider({
+  activate,
+  counter,
+  randomCounter,
+  increaseCounter,
+  decreaseCounter,
+}) {
   const lastImg = LIST_OF_IMAGES_LARGE.length - 1;
-  const { counter, randomCounter, increaseCounter, decreaseCounter } =
-    useCounter();
 
   return (
     <section className="container_slider">
@@ -17,6 +22,7 @@ export function Slider() {
           className="container_img"
           src={`${LIST_OF_IMAGES_LARGE[counter]}`}
           alt="Imagen de producto"
+          onClick={activate}
         />
 
         <a
@@ -48,31 +54,7 @@ export function Slider() {
         </a>
       </figure>
 
-      <ul className="list_images-small">
-        {LIST_OF_IMAGES_SMALL.map((img, index) => {
-          return (
-            <li
-              key={index}
-              className={`list_item-img`}
-              onClick={() => randomCounter(index)}
-            >
-              <img
-                key={index}
-                src={`${img}`}
-                alt="Imagen pequeña del producto"
-                className={`list_img ${
-                  counter === index ? "list_img--active" : ""
-                } `}
-              />
-              <span
-                className={`list_gradient ${
-                  counter === index ? "list_gradient-active" : ""
-                } `}
-              ></span>
-            </li>
-          );
-        })}
-      </ul>
+      <ListImg counter={counter} randomCounter={randomCounter} />
     </section>
   );
 }

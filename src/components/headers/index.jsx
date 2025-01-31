@@ -14,7 +14,7 @@ export function Header({ activate }) {
           />
 
           <ul className="nav_list">
-            <li className="nav_item">
+            <li className="nav_item .nav_item-first">
               <h2 className="nav_logo">sneakers</h2>
             </li>
             <div className="nav_group-items">
