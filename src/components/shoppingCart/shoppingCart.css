@@ -1,0 +1,35 @@
+@import url("../../styles/colors.css");
+
+.nav_shoppingCart {
+  position: absolute;
+  z-index: 70;
+  top: 80px;
+  right: calc(50% - 160px);
+  width: 90%;
+  max-width: 320px;
+  height: 230px;
+  color: var(--Dark-grayish-blue);
+  padding: 1rem;
+  background-color: var(--White);
+  border-radius: 8px;
+  box-shadow: 0px 15px 25px -3px rgba(0 0 0 /0.4);
+}
+.nav_shoppingCart-title {
+  color: var(--Black);
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+
+.nav_shoppingCart-body {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 85%;
+  border-top: 1px solid var(--Grayish-blue);
+}
+
+@media (min-width: 400px) {
+  .nav_shoppingCart {
+    right: 70px;
+  }
+}

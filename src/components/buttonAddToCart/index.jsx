@@ -2,7 +2,14 @@ import "./button.css";
 import { RELATIVE_PATHS } from "../../routes/relativePaths";
 import { useCounter } from "../../Hooks/counter";
 
-export function ButtonAddToCart() {
+export function ButtonAddToCart({
+  addToCart,
+  productKey,
+  productName,
+  productPrice,
+  productImg,
+  PriceToPay,
+}) {
   const { counter, increaseCounter, decreaseCounter } = useCounter();
   return (
     <div className="button_content">
@@ -24,8 +31,18 @@ export function ButtonAddToCart() {
         ></img>
       </div>
       <a
-        href=""
+        href="#"
         className={`button_btn ${counter === 0 ? "button_btn--inactive" : ""}`}
+        onClick={() => {
+          addToCart({
+            productKey,
+            productName,
+            productPrice,
+            productImg,
+            PriceToPay,
+            counter,
+          });
+        }}
       >
         <img
           src={`${RELATIVE_PATHS}/icons/icon-cart-dark.svg`}

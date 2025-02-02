@@ -8,6 +8,7 @@
   max-height: 330px;
 }
 .container_img {
+  pointer-events: none;
   object-position: 0 2px;
 }
 
@@ -43,6 +44,9 @@
 }
 
 @media (min-width: 1020px) {
+  .container_img {
+    pointer-events: unset;
+  }
   .container_figure {
     max-height: 350px;
   }

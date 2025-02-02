@@ -1,7 +1,10 @@
 import "./header.css";
 import { RELATIVE_PATHS } from "../../routes/relativePaths";
 
-export function Header({ activate }) {
+//Componentes
+
+export function Header({ activateMenu, activateCart, cart }) {
+  console.log();
   return (
     <header className="header">
       <nav className="nav">
@@ -10,7 +13,7 @@ export function Header({ activate }) {
             src={`${RELATIVE_PATHS}/icons/icon-menu.svg`}
             alt="icono de menu"
             className="nav_icon-menu"
-            onClick={activate}
+            onClick={activateMenu}
           />
 
           <ul className="nav_list">
@@ -51,7 +54,13 @@ export function Header({ activate }) {
             src={`${RELATIVE_PATHS}/icons/icon-cart.svg`}
             alt="icono de carrito de compras"
             className="nav_icon-cart"
+            onClick={activateCart}
           />
+          {cart.length !== 0 && (
+            <span className="nav_shoppingCart-number">
+              {cart.length === 0 ? "0" : cart[0].counter}
+            </span>
+          )}
           <img
             src={`${RELATIVE_PATHS}/images/image-avatar.png`}
             alt="imagen de usuario"
