@@ -1,7 +1,7 @@
 import "./texts.css";
 
 import { ButtonAddToCart } from "../buttonAddToCart";
-import { PRODUCT } from "../../utils/constants/products";
+import { PRODUCT } from "../../utils/products";
 
 export function Texts({ addToCart }) {
   return (

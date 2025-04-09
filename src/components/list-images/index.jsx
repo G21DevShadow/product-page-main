@@ -1,7 +1,6 @@
 import "./list.css";
 
-import { LIST_OF_IMAGES_SMALL } from "../../utils/constants";
-import { useCounter } from "../../Hooks/counter";
+import { LIST_OF_IMAGES_SMALL } from "../../utils/list-Images.js";
 
 export function ListImg({ counter, randomCounter }) {
   return (

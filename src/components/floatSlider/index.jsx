@@ -1,5 +1,5 @@
 import "./floatSlider.css";
-import { LIST_OF_IMAGES_LARGE } from "../../utils/constants";
+import { LIST_OF_IMAGES_LARGE } from "../../utils/list-Images.js";
 
 import { ListImg } from "../list-images";
 

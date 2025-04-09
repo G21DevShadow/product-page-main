@@ -1,6 +1,6 @@
 import "./slider.css";
 
-import { LIST_OF_IMAGES_LARGE } from "../../utils/constants";
+import { LIST_OF_IMAGES_LARGE } from "../../utils/list-Images.js";
 import { RELATIVE_PATHS } from "../../routes/relativePaths";
 
 //importar componente

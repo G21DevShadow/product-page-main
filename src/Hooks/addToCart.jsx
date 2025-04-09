@@ -15,11 +15,6 @@ export default function useAddToCart() {
     setCart([product]);
   };
 
-  // Función para eliminar un producto del carrito
-  const removeCart = (index) => {
-    setCart(cart.filter((product) => product.productKey !== index));
-  };
-
   // Función para vaciar el carrito
   const emptyCart = () => {
     setCart(new Array(0));

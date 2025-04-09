@@ -4,7 +4,6 @@ import { RELATIVE_PATHS } from "../../routes/relativePaths";
 //Componentes
 
 export function Header({ activateMenu, activateCart, cart }) {
-  console.log();
   return (
     <header className="header">
       <nav className="nav">
@@ -57,9 +56,7 @@ export function Header({ activateMenu, activateCart, cart }) {
             onClick={activateCart}
           />
           {cart.length !== 0 && (
-            <span className="nav_shoppingCart-number">
-              {cart.length === 0 ? "0" : cart[0].counter}
-            </span>
+            <span className="nav_shoppingCart-number">{cart[0].counter}</span>
           )}
           <img
             src={`${RELATIVE_PATHS}/images/image-avatar.png`}

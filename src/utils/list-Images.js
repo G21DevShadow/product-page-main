@@ -1,4 +1,4 @@
-import { RELATIVE_PATHS } from "../../routes/relativePaths";
+import { RELATIVE_PATHS } from "../routes/relativePaths";
 
 export const LIST_OF_IMAGES_LARGE = [
   `${RELATIVE_PATHS}images/image-product-1.jpg`,

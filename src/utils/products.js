@@ -1,4 +1,4 @@
-import { RELATIVE_PATHS } from "../../routes/relativePaths";
+import { RELATIVE_PATHS } from "../routes/relativePaths";
 
 export const PRODUCT = [
   {
