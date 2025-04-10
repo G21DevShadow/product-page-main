@@ -1,8 +1,10 @@
 import "./list.css";
 
 import { LIST_OF_IMAGES_SMALL } from "../../utils/list-Images.js";
+import { useCounter } from "../../Hooks/counter.jsx";
 
-export function ListImg({ counter, randomCounter }) {
+export function ListImg() {
+  const { counter, randomCounter } = useCounter();
   return (
     <ul className="list_images-small">
       {LIST_OF_IMAGES_SMALL.map((img, index) => {

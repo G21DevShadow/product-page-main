@@ -3,14 +3,12 @@ import { LIST_OF_IMAGES_LARGE } from "../../utils/list-Images.js";
 
 import { ListImg } from "../list-images";
 
-export function FloatingSlider({
-  activate,
-  counter,
-  randomCounter,
-  increaseCounter,
-  decreaseCounter,
-}) {
+import { useCounter } from "../../Hooks/counter.jsx";
+export function FloatingSlider({ deactivateFloating }) {
   const lastImg = LIST_OF_IMAGES_LARGE.length - 1;
+
+  const { counter, randomCounter, increaseCounter, decreaseCounter } =
+    useCounter();
   return (
     <section className="floatingContainer">
       <div className="floating_gradient"></div>
@@ -23,7 +21,7 @@ export function FloatingSlider({
           width="24px"
           fill="#ffff"
           className="floating_imgs close_image"
-          onClick={activate}
+          onClick={deactivateFloating}
         >
           <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
         </svg>

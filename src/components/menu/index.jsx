@@ -1,18 +1,20 @@
 import "./menu.css";
 import { RELATIVE_PATHS } from "../../routes/relativePaths";
 
-export function Menu({ isActive, activate }) {
+export function Menu({ isActiveMenu, activateMenu }) {
   return (
     <>
-      <div className={`gradient ${isActive ? "gradient-active" : ""}`}> </div>
-      <div className={`menu ${isActive ? "menu-active" : ""}`}>
+      <div
+        className={`gradient ${isActiveMenu ? "gradient-active" : ""}`}
+      ></div>
+      <div className={`menu ${isActiveMenu ? "menu-active" : ""}`}>
         <ul className="menu_list">
           <li className="menu_item">
             <img
               src={`${RELATIVE_PATHS}/icons/icon-close.svg`}
               alt=""
               className="menu_icon-close"
-              onClick={activate}
+              onClick={activateMenu}
             />
           </li>
           <li className="menu_item">

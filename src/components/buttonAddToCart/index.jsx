@@ -1,16 +1,19 @@
 import "./button.css";
 import { RELATIVE_PATHS } from "../../routes/relativePaths";
-import { useCounter } from "../../Hooks/counter";
+import { useAmountProduct } from "../../Hooks/amountProduct";
+
+//hook
+import { useManipulateToCar } from "../../Hooks/manipulateShoppingCart";
 
 export function ButtonAddToCart({
-  addToCart,
   productKey,
   productName,
   productPrice,
   productImg,
   PriceToPay,
 }) {
-  const { counter, increaseCounter, decreaseCounter } = useCounter();
+  const { amount, increaseAmount, decreaseAmount } = useAmountProduct();
+  const { addCart } = useManipulateToCar();
   return (
     <div className="button_content">
       <div className="button_counter">
@@ -18,29 +21,29 @@ export function ButtonAddToCart({
           src={`${RELATIVE_PATHS}/icons/icon-remove.svg`}
           alt=""
           className={`button_sign ${
-            counter === 0 ? "button_sing--inactive" : ""
+            amount === 0 ? "button_sing--inactive" : ""
           }`}
-          onClick={decreaseCounter}
+          onClick={decreaseAmount}
         ></img>
-        <p className="button_number">{counter}</p>
+        <p className="button_number">{amount}</p>
         <img
           src={`${RELATIVE_PATHS}/icons/icon-add.svg`}
           alt=""
           className="button_sign"
-          onClick={increaseCounter}
+          onClick={increaseAmount}
         ></img>
       </div>
       <a
         href="#"
-        className={`button_btn ${counter === 0 ? "button_btn--inactive" : ""}`}
+        className={`button_btn ${amount === 0 ? "button_btn--inactive" : ""}`}
         onClick={() => {
-          addToCart({
+          addCart({
             productKey,
             productName,
             productPrice,
             productImg,
             PriceToPay,
-            counter,
+            amount,
           });
         }}
       >

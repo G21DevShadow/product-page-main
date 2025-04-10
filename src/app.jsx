@@ -6,55 +6,30 @@ import { Texts } from "./components/texts";
 import { FloatingSlider } from "./components/floatSlider";
 import { ShoppingCart } from "./components/shoppingCart";
 
-//Hook
-import { useToggle } from "./Hooks/activate";
-import { useCounter } from "./Hooks/counter";
-import useAddToCart from "./Hooks/addToCart";
+//reducer
+import { useRState } from "./reducer/useRState";
 
 function App() {
-  const { state: isMenuActive, activate: toggleMenu } = useToggle();
-  const { state: isFloatingActive, activate: toggleFloating } = useToggle();
-  const { state: isShoppingCartActive, activate: toggleShoppingCart } =
-    useToggle();
-
-  const { counter, randomCounter, increaseCounter, decreaseCounter } =
-    useCounter();
-
-  const { cart, addCart, emptyCart } = useAddToCart();
+  const { state, toggleFloating, toggleMenu, toggleShoppingCart } = useRState();
 
   return (
     <main>
       <Header
         activateMenu={toggleMenu}
-        activateCart={toggleShoppingCart}
-        cart={cart}
+        activateShoppingCart={toggleShoppingCart}
       />
-      {isShoppingCartActive && (
-        <ShoppingCart cart={cart} removeCart={emptyCart} />
-      )}
+      {state.isShoppingCartActive && <ShoppingCart />}
 
-      <Menu isActive={isMenuActive} activate={toggleMenu} />
+      <Menu isActiveMenu={state.isMenuActive} activateMenu={toggleMenu} />
 
       <section className="container">
-        <Slider
-          activate={toggleFloating}
-          counter={counter}
-          randomCounter={randomCounter}
-          decreaseCounter={decreaseCounter}
-          increaseCounter={increaseCounter}
-        />
-        <Texts addToCart={addCart} />
+        <Slider activateFloating={toggleFloating} />
+        <Texts />
       </section>
 
       <>
-        {isFloatingActive && (
-          <FloatingSlider
-            activate={toggleFloating}
-            counter={counter}
-            randomCounter={randomCounter}
-            decreaseCounter={decreaseCounter}
-            increaseCounter={increaseCounter}
-          />
+        {state.isFloatingActive && (
+          <FloatingSlider deactivateFloating={toggleFloating} />
         )}
       </>
     </main>

@@ -28,6 +28,7 @@
 .productCart_total {
   color: var(--Black);
   font-weight: 700;
+  padding-left: 5px;
 }
 .productCart_iconDelete {
   cursor: pointer;

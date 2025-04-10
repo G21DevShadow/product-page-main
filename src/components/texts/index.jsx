@@ -3,7 +3,10 @@ import "./texts.css";
 import { ButtonAddToCart } from "../buttonAddToCart";
 import { PRODUCT } from "../../utils/products";
 
-export function Texts({ addToCart }) {
+//utilities
+import { formatPrice } from "../../utils/convertCurrency";
+
+export function Texts() {
   return (
     <>
       {PRODUCT.map((product) => {
@@ -19,15 +22,14 @@ export function Texts({ addToCart }) {
 
             <div className="texts_content-price">
               <div className="texts_price-discount">
-                <h2 className="texts_price">${product.price}</h2>
+                <h2 className="texts_price">{formatPrice(product.price)}</h2>
                 <span className="texts_discount">
                   <p>50%</p>
                 </span>
               </div>
-              <p className="texts_price-crossed"> $250.00</p>
+              <p className="texts_price-crossed"> {formatPrice(250)}</p>
             </div>
             <ButtonAddToCart
-              addToCart={addToCart}
               productKey={product.productKey}
               productName={product.name}
               productPrice={product.price}

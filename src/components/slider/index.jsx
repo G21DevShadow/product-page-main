@@ -6,13 +6,11 @@ import { RELATIVE_PATHS } from "../../routes/relativePaths";
 //importar componente
 import { ListImg } from "../list-images";
 
-export function Slider({
-  activate,
-  counter,
-  randomCounter,
-  increaseCounter,
-  decreaseCounter,
-}) {
+import { useCounter } from "../../Hooks/counter.jsx";
+
+export function Slider({ activateFloating }) {
+  const { counter, increaseCounter, decreaseCounter } = useCounter();
+
   const lastImg = LIST_OF_IMAGES_LARGE.length - 1;
 
   return (
@@ -22,7 +20,7 @@ export function Slider({
           className="container_img"
           src={`${LIST_OF_IMAGES_LARGE[counter]}`}
           alt="Imagen de producto"
-          onClick={activate}
+          onClick={activateFloating}
         />
 
         <a
@@ -54,7 +52,7 @@ export function Slider({
         </a>
       </figure>
 
-      <ListImg counter={counter} randomCounter={randomCounter} />
+      <ListImg />
     </section>
   );
 }

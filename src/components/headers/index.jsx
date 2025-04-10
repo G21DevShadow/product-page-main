@@ -1,9 +1,12 @@
 import "./header.css";
 import { RELATIVE_PATHS } from "../../routes/relativePaths";
 
-//Componentes
+//hook
+import { useManipulateToCar } from "../../Hooks/manipulateShoppingCart";
 
-export function Header({ activateMenu, activateCart, cart }) {
+export function Header({ activateMenu, activateShoppingCart }) {
+  const { cart } = useManipulateToCar();
+
   return (
     <header className="header">
       <nav className="nav">
@@ -11,7 +14,7 @@ export function Header({ activateMenu, activateCart, cart }) {
           <img
             src={`${RELATIVE_PATHS}/icons/icon-menu.svg`}
             alt="icono de menu"
-            className="nav_icon-menu"
+            className={`nav_icon-menu `}
             onClick={activateMenu}
           />
 
@@ -53,10 +56,10 @@ export function Header({ activateMenu, activateCart, cart }) {
             src={`${RELATIVE_PATHS}/icons/icon-cart.svg`}
             alt="icono de carrito de compras"
             className="nav_icon-cart"
-            onClick={activateCart}
+            onClick={activateShoppingCart}
           />
           {cart.length !== 0 && (
-            <span className="nav_shoppingCart-number">{cart[0].counter}</span>
+            <span className="nav_shoppingCart-number">{cart[0].amount}</span>
           )}
           <img
             src={`${RELATIVE_PATHS}/images/image-avatar.png`}

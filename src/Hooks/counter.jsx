@@ -1,20 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
+import { counterContext } from "../context/counterContext";
 
 export function useCounter() {
-  const [counter, setCounter] = useState(0);
-
-  const randomCounter = (n) => {
-    const newN = n;
-    setCounter(newN);
-  };
-  const increaseCounter = () => {
-    let newN = counter + 1;
-    setCounter(newN);
-  };
-  const decreaseCounter = () => {
-    let newN = counter - 1;
-    setCounter(newN);
-  };
+  const { counter, increaseCounter, decreaseCounter, randomCounter } =
+    useContext(counterContext);
 
   return {
     counter,
